@@ -64,6 +64,9 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
+        $GITHUB_WORKSPACE/scripts/preset-clash-core.sh $CLASH_KERNEL
+        $GITHUB_WORKSPACE/scripts/preset-terminal-tools.sh
+        $GITHUB_WORKSPACE/scripts/preset-adguard-core.sh $CLASH_KERNEL
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
@@ -78,9 +81,6 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        $GITHUB_WORKSPACE/scripts/preset-clash-core.sh $CLASH_KERNEL
-        $GITHUB_WORKSPACE/scripts/preset-terminal-tools.sh
-        $GITHUB_WORKSPACE/scripts/preset-adguard-core.sh $CLASH_KERNEL
 
     - name: Download package
       id: package

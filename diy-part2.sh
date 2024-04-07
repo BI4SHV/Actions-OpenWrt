@@ -13,10 +13,6 @@
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.31.150/g' package/base-files/files/bin/config_generate
 
-# 科学上网插件
-git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
-git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
-
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
